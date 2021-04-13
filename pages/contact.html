@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+	<!-- Inicio HEAD -->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<!-- link al archivo CSS -->
+		<link rel="stylesheet" href="../css/main.css" type="text/css">
+			<!-- links a las fuentes de Google Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+			<!-- título de la PAGE -->
+		<title>CONTACTO</title>
+	</head>
+	<!-- Fin HEAD -->
+	<!-- Inicio BODY -->
+	<body>
+		<!-- Inicio HEADER -->
+		<header class="grid">
+			<!-- Logo de la web, con un link al index.html -->	
+			<div class="grid__logo border__logo">
+				<span class="logo__wheel"></span>
+				<h1 class="logo"><a class="logo__anchor" href="../index.html"><br>La rueda de Aurora <br><span class="logo__est">Est.1953</span></a></h1>
+			</div>
+			<!-- Inicio Menú de navegación -->
+			<div class="grid__navBar border">
+				<div class="flex__navBar">
+					<div class="gender__dropdown">
+						<span class="gender__name">X</span>
+						<!-- Lista no-ordenada, que actua como dropdown menu -->
+						<ul class="gender__dropdown--content">
+							<li class="gender__dropdown--content--item"><a href="./x-shirts.html">Camisetas</a></li>
+							<li class="gender__dropdown--content--item"><a href="./x-pants.html">Pantalones</a></li>
+						</ul>
+					</div>
+					<div class="gender__dropdown">
+						<span class="gender__name">Y</span>
+						<!-- Lista no-ordenada, que actua como dropdown menu -->
+						<ul class="gender__dropdown--content">
+							<li class="gender__dropdown--content--item"><a href="./y-shirts.html">Camisetas</a></li>
+							<li class="gender__dropdown--content--item"><a href="./y-pants.html">Pantalones</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Lista no-ordenada, con links a las otras páginas de la web-->
+			<div class="grid__menuBar border">
+				<ul class="menuBar">
+					<li class="menuBar__pages"><a href="./our-factory.html">Nuestra fábrica</a></li>
+					<li class="menuBar__pages"><a href="./terms.html">Condiciones de venta</a></li>
+					<li class="menuBar__pages active-page"><a href="./contact.html">Contacto</a></li>
+					<li class="menuBar__pages"><a href="./copyright.html">Copyright</a></li>
+				</ul>
+			</div>
+			<!-- Fin Menú de navegación -->
+			<!-- Ruta de navegación -->
+			<div class="grid__menu__route menu__route border__route">
+				<p><span class="menu__route--title">Estás en:</span> Contacto</p>
+			</div>
+		</header>
+		<!-- Fin HEADER -->
+		<!-- Inicio BODY -->
+		<main>
+			<div class="grid__article1">
+				<div class="content__container">
+					<h2 class="content__title">Formulario de contacto</h2>
+					<!-- Inicio FORM -->
+					<form action="message-received.html#message-received" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="off">
+						<fieldset>
+							<!-- Título del formulario -->
+							<legend class="form__title">Formulario de contacto</legend>
+								<div class="form">
+								<!-- DIV solicitando motivo de la solicitud del contacto con inputs radio -->
+								<label for="reason">Motivo:</label><br>
+									<input class="request" type="radio" name="reason" value="1" id="request">
+									<label class="pointer" for="request" name="reason" >Consulta general</label>
+									<input class="work-with-us" type="radio" name="reason" value="0" id="work-with-us">
+									<label class="pointer" for="work-with-us" name="reason">Trabaja con nosotros</label>
+								</div>
+								<!-- DIV solicitando los datos del contactante -->
+								<div class="form">
+									<label for="name">Nombre y apellidos</label> <br>
+									<input type="text" placeholder="Nombre y Apellidos" required> <br>
+									<label for="email">Dirección de e-mail</label> <br>
+									<input type="email" name="email" placeholder="Tu dirección de email" required>
+								</div>
+								<!-- DIV con input textarea para el mensaje del contactante -->
+								<div class="form">
+									<label for="message">Tu mensaje <span class="maxlength">(Max.400 carácteres)</span></label> <br>
+									<textarea name="message" cols="70" rows="10" maxlength="400" required></textarea>
+								</div>
+								<!-- DIV con la opción de adjuntar un documento. Este input era especialmente util si hubiese podido hacer funcionar las etiquetas SELECT -->
+								<div class="form">
+									<label for="attachment">Adjunta un archivo (opcional)</label><br>
+									<input type="file" name="attachment">
+								</div>
+								<!-- DIV con un checkbox, para que el consultante acepte los términos de privacidad. El link debe llevar directamente al subapartado de privacidad dentro de terms.html abriendo en una página nueva mediante target:"_blank"-->
+								<div class="form">
+									<input type="checkbox" name="privacy" required>
+									<label for="privacy">Al hacer click en "Enviar" declaras que has leído y comprendido nuestros<br><a class="link-to-privacy" href="terms.html#terms__privacy" target="_blank">términos de privacidad</a></label>
+								</div>
+								<!-- DIV con los botones para restablecer y enviar el formulario -->
+								<div class="form">
+									<input class="pointer" type="reset" value="Restablecer">
+									<input class="pointer" type="submit" value="Enviar">
+								</p>
+						</fieldset>
+					<!-- Fin FORM -->
+					</form>
+				</div>
+			</div>
+		</main>
+		<!-- Fin BODY -->
+	</div>
+</body>
+</html>

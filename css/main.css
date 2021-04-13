@@ -1,0 +1,415 @@
+/* colors
+dark purple #A336A1
+light rose #FFC13B
+pastel green #92BC41
+*/
+
+/* Reset de los valores */
+* {
+	margin: 0; 
+	padding: 0;
+	font-family: "Noto Sans", sans-serif;
+}
+
+body {
+	background-color: #A336A1;
+}
+
+/* Quitar de manera genérica el color y el underline de los links de toda la web.
+Si se quieren añadir escepcionalmente se puede hacer mediante una class */
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Para sacarle los puntitos decorativos a la lista del menú de navegación */
+.gender__dropdown--content, .menuBar {
+	list-style: none;	
+}
+
+/* Inicio configuración grid */
+.grid {
+	display: grid;
+	align-content: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 300px 150px auto auto auto auto;
+	grid-gap: 5px 2px;
+	grid-template-areas: 
+		"logo logo"
+		"navBar menuBar"
+		"menu__route menu__route"
+		"article1 article1"
+		"article2 article2"
+		"article3 article3";
+}
+
+.grid__logo {
+	grid-area: logo;
+	display: grid;
+	justify-content: center;
+	background: radial-gradient(circle, #92BC41, #FFC13B);
+}
+
+.grid__navBar {
+	grid-area: navBar;
+	background: linear-gradient(to right, #92BC41, #FFC13B, #FFC13B, #FFC13B);
+}
+
+.grid__menuBar {
+	grid-area: menuBar;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	background: linear-gradient(to left, #92BC41, #FFC13B, #FFC13B, #FFC13B);
+}
+
+.grid__menu__route {
+	grid-area: menu__route;
+	background-color: #92BC41;
+}
+
+.grid__article1 {
+	grid-area: article1;
+}
+
+.grid__article2 {
+	grid-area: article2;
+}
+
+.grid__article3 {
+	grid-area: article3;
+}
+
+.border {
+	border: 2px solid;
+	border-radius: 5%;
+}
+
+.border__logo {
+	border: 2px solid;
+	border-radius: 0 0 5% 5%;
+}
+
+.border__route {
+	border: 2px solid;
+	border-radius: 10%;
+}
+
+/* Fin configuración grid */
+
+/* Inicio configuración LOGO. El logo no es una imagen, está hecha con un H1, border y border-radius */
+
+.logo {	
+	text-align: center;
+	font-style: italic;
+	width: 180px;
+	height: 180px;
+	margin-top: 30px;
+	z-index: 2;
+	transform: translate(22px, -240px);
+}
+
+.logo__wheel {
+	width: 180px;
+	height: 180px;
+	margin-top: 30px;
+	border: 25px dashed #FFC13B;
+	border-radius: 50%;
+	z-index: 1;
+	animation-name: rotate;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-duration: 10s;
+}
+
+@keyframes rotate {
+	0% {transform: rotate(5deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.logo__wheel:hover {
+	transform: rotate(1080deg);
+}
+
+.logo__anchor {
+	font-family: "Lobster", cursive;
+	color: #A336A1;
+}
+
+.logo__est {
+	font-size: 55%;
+}
+/* Fin configuración LOGO */
+
+
+/* Inicio - Configuración del menú desplegable X / Y */
+.gender__name {
+	font-size: 35px;
+	margin: 50px;
+	padding: 50px;
+}
+
+.gender__dropdown {
+	overflow: hidden;
+}
+
+.gender__dropdown--content {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	margin-left: 55px;
+}
+
+.gender__dropdown--content a {
+	float: none;
+	display: block;
+	padding: 10px;
+}
+
+.gender__dropdown:hover .gender__dropdown--content {
+	display: block;
+}
+
+.gender__dropdown span:hover {
+	background-color: #FFF1EB;
+	color: #FF708A;
+	text-decoration: underline;	
+}
+
+.gender__dropdown--content--item:hover a {
+	background-color: #FFF1EB;
+	color: #FF708A;
+	border-radius: 15%;
+}
+/* Fin - Configuración del menú desplegable X / Y */
+
+/* Inicio configuración flex de los menú de navegación */
+.flex__navBar {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 5px;
+}
+
+.menuBar__pages {
+	display: inline;
+	margin: 0 20px;
+}
+
+.menuBar__pages a:hover {
+	padding: 5px;
+	background-color: #FFF1EB;
+	color: #FF708A;
+	border-radius: 15%;
+	text-decoration: underline;
+}
+
+/* Cada apartado del menú de navegación va a quedar señalado cuando se esté en esa página en concreto */
+.active-page {
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 115%;
+}
+/* Fin configuración flex de los menú de navegación */
+
+/* Inicio Ruta de navegación */
+
+.menu__route {
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	color: #161118;
+}
+
+.menu__route--title {
+	text-decoration: underline;
+	font-weight: bold;
+}
+/* Fin Ruta de navegación
+
+/* Inicio - HEROs del index.html. Cada uno con una imagen, texto, y un link que reacciona al mouse */
+.flyer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5em;
+	height: 596px;
+}
+
+.flyer__content {
+	text-align: center;
+	padding: 10px;
+	border: 2px solid purple;
+	background-color: #ffffff;
+	transform: skew(-15deg);
+}
+
+.flyer__content--anchor {
+	color: purple;
+}
+
+.flyer__content a:hover {
+	text-decoration: underline;
+	color: blue;
+}
+
+.updates {
+	background-image: url(../media/updates-back.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	border-radius: 5%;
+}
+
+.hero1 {
+	background-image: url(../media/hero1-back.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	border-radius: 5%;
+}
+
+.hero2 {
+	background-image: url(../media/hero2-back.gif);
+	background-size: cover;
+	background-attachment: fixed;
+	border-radius: 5%;
+}
+/* Fin - HEROs del index.html. Cada uno con una imagen, texto, y un link que reacciona al mouse */
+
+/* Inicio configuración containers de las pages */
+.content__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 800px;
+	margin: 25px 25px 25px 200px;
+	padding: 75px;
+	border-radius: 20%;
+	background-color: #FFF1EB;
+}
+
+.content__title {
+	font-style: italic;
+	text-align: center;
+	width: 50%;
+	margin: 0 0 30px 0;
+	padding: 25px;
+	border: 5px dotted #FFC95C;
+	animation-name: content__title__animation;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+	animation-duration: 3s;
+	animation-delay: 2s;
+}
+
+@keyframes content__title__animation {
+	0% {transform: skew(0deg);}
+	25% {transform: skew(-15deg);}
+	75% {transform: skew(15deg);}
+	100% {transform: skew(0deg);}
+}
+
+.content {
+	text-align: justify;
+	margin: 5px;
+}
+
+.content__copyrightDate {
+	margin-top: 10px;
+	text-align: center;
+	font-style: oblique;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.form {
+	margin: 10px 10px 10px 20px;
+}
+
+.form__title {
+	text-decoration: overline underline;
+	margin-left: 50px;
+	padding: 20px;
+}
+
+.link-to-privacy {
+	color: purple;
+	text-decoration: underline;
+}
+
+.history__picture--founder {
+	border: 10px black dotted;
+	border-radius: 45%;
+	margin-bottom: 15px;
+	transition: 3s;
+}
+
+.history__picture--founder:hover {
+	transform: rotateY(360deg);
+}
+
+.content__factoryVideo__old {
+	width: 75%;
+	height: 337.5px;
+	margin: 15px 0;
+}
+
+.content__factoryVideo__new {
+	width: 75%;
+	margin: 15px 0;
+}
+
+table {
+	margin-top: 15px;
+}
+
+table, th, td {
+	border: 1px solid #000000;
+	border-collapse: collapse;
+	padding: 5px 10px 5px 10px;
+}
+
+.table-head{
+	text-align: center;
+}
+
+	/* Inicio - Lisa ordenada con sublista no-ordenada anidada */
+.content__list {
+	align-self: flex-start;
+	list-style-type: upper-roman;
+	font-weight: bold;
+	line-height: 2.5;
+	padding: 5px;
+	margin: 5px 0 10px 50px;
+}
+
+.list {
+	padding: 5px;
+}
+
+.list__sublist {
+	list-style-type: square;
+	font-weight: normal;
+	margin-left: 25px;
+	padding: 5px;
+}
+
+.underline {
+	text-decoration: underline;
+}
+	/* Fin - Lisa ordenada con sublista no-ordenada anidada */
+	/* Inicio - Configuración de las páginas de ropa */
+.clothes__container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 65%;
+}
+
+.clothes__img {
+	margin: 10px;
+}
+
+.clothes__img:hover {
+	transform: scale(1.3, 1.3);
+}
+	/* Fin - Configuración de las páginas de ropa */
+/* Fin configuración containers de las pages */
